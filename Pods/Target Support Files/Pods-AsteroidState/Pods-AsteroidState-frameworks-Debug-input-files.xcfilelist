@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-AsteroidState/Pods-AsteroidState-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DatePicker/DatePicker.framework
+${BUILT_PRODUCTS_DIR}/Extended/Extended.framework
+${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
