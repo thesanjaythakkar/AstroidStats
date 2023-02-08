@@ -12,14 +12,18 @@ let APIManager = APIManagerClass.shared
 class APIManagerClass {
     static var shared = APIManagerClass()
     
+    let baseURL = "https://api.nasa.gov/neo/rest/v1/feed"
+    let apiKey = "7a9BlkA6LrJXLrEngGkkyOvodhf3alh1QQ8KGx61"
+    
+    ///Get All Astroids with Given Range
     func getAstroids(withRange
                      from:Date,
                      to:Date,
                      completion: @escaping ([AstroidObject]?)->()
     ) {
         
-        let apiKey = "7a9BlkA6LrJXLrEngGkkyOvodhf3alh1QQ8KGx61"
-        let urlString = "https://api.nasa.gov/neo/rest/v1/feed?start_date=\(from.toValidFormat())&end_date=\(to.toValidFormat())&api_key=\(apiKey)"
+        
+        let urlString = "\(baseURL)?start_date=\(from.toValidFormat())&end_date=\(to.toValidFormat())&api_key=\(apiKey)"
             
             guard let url = URL(string: urlString) else {
                 completion(nil)

@@ -34,15 +34,22 @@ struct NearEarthObject: Codable {
         case closeApproachData = "close_approach_data"
     }
     
+    ///Get Actual Speed of Individual Astroid
     func speed()->Double {
         return Double(closeApproachData.first!.relativeVelocity.kilometersPerSecond)!
     }
+    
+    ///Get Actual Distance of Individual Astroid From Earth
     func distance()->String {
         return closeApproachData.first!.missDistance.kilometers
     }
+    
+    ///Get Approach Date of Individual Astroid From Earth
     func closeDate() -> Date {
         return closeApproachData.first!.closeApproachDateFull.toValidFormat()
     }
+    
+    ///Get Diameter of Individual Astroid
     func avgDiameter() -> Double {
         Double((Double(estimatedDiameter.kilometers.min) + Double(estimatedDiameter.kilometers.max))/2)
     }
@@ -109,13 +116,15 @@ struct AstroidObject {
     var date:String?
     var astroids:[NearEarthObject]?
     
+    ///Get Fastest Astroid From Astroid Object
     func fastestAmong() -> NearEarthObject {
         return astroids!.sorted(by: { obj1, obj2 in
             return obj1.speed() > obj2.speed()
         }).first!
     }
     
-    func closesAmoug() -> NearEarthObject {
+    ///Get Closest Astroid From Astroid Object
+    func closestAmong() -> NearEarthObject {
         return astroids!.sorted(by: { obj1, obj2 in
             return obj1.closeDate() > obj2.closeDate()
         }).first!
