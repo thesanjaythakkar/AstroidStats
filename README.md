@@ -2,6 +2,8 @@
 
 A project that fetches NASA's Neo Feed and displays various statistics about near-earth objects (NEOs).
 
+![Simulator Screen Shot - iPhone 11 - 2023-02-08 at 12 25 46](https://user-images.githubusercontent.com/19760004/217458574-1137afa9-1b45-4263-9f84-4634c862ea21.png)
+
 # Features
 - Input fields for start and end dates
 - Date picker for selecting dates
